@@ -1,82 +1,49 @@
-📊 Fashion Retail Analytics: Consumer Behavior & Strategy
-📌 Project Overview
-This project performs an end-to-end analysis of 3,900 customer transactions for a fashion and accessories retail store. By integrating Python for ETL, MySQL for business logic, and Power BI for executive reporting, I uncovered key drivers behind customer spending, subscription rates, and brand loyalty.
+# 🛍️ Consumer Shopping Behavior Analysis: End-to-End Retail Strategy
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+![Database](https://img.shields.io/badge/MySQL-Analysis-blue?style=for-the-badge&logo=mysql)
+![Python](https://img.shields.io/badge/Python-EDA-green?style=for-the-badge&logo=python)
 
+## 📌 Project Overview
+This project addresses a critical business problem: how to leverage consumer shopping data to identify trends, improve engagement, and optimize marketing strategies. I analyzed a dataset of **3,900 purchases** across 18 key features to uncover actionable insights into demographics, subscription behavior, and purchase drivers.
 
+## 🛠️ Data Analytics Workflow
 
+### 1. Data Preparation & Engineering (Python)
+Using `pandas` in the `Customer_Shopping_Behavior_Analysis.ipynb` notebook, I performed the following ETL tasks:
+* **Missing Value Imputation**: Handled 37 missing values in the `Review Rating` column using the median rating per product category.
+* **Feature Engineering**: Created an `age_group` column for demographic segmentation and a `purchase_frequency_days` column.
+* **Cleanup**: Renamed columns to `snake_case` and dropped redundant features like `promo_code_used` to ensure data consistency.
 
+### 2. Business Logic & Analysis (SQL)
+After loading the cleaned data into **MySQL**, I executed structured queries in `customer_behavior_sql_queries.sql` to answer 10 critical business questions:
+* **Revenue Leadership**: Identified that **Male** customers generated **$157,890** in revenue vs. **$75,191** from **Females**.
+* **Customer Segmentation**: Classified the database into **Loyal (3,116)**, **Returning (701)**, and **New (83)** segments based on purchase history.
+* **Top Performance**: Identified **Young Adults** as the highest revenue group ($62,143) and **Jewelry** as the top-selling accessory.
 
-🛠️ Data Pipeline & Transformation
-1. Data Cleaning (Python)
+### 3. Executive Reporting (Power BI)
+I built an interactive dashboard in `customer_behavior_dashboard.pbix` to visualize KPIs:
+* **Core Metrics**: 3.9K Customers | $59.76 Avg. Purchase | 3.75 Avg. Rating.
+* **Insights**: Discovered that while **27%** of customers are subscribers, non-subscribers have a slightly higher average spend ($59.87).
 
-Missing Value Imputation: Handled 37 missing values in the Review Rating column by applying the median rating of each product category.
+---
 
+## 📂 Repository Structure
+* **`customer_shopping_behavior.csv`**: The primary raw dataset containing 3,900 records.
+* **`Customer_Shopping_Behavior_Analysis.ipynb`**: Python notebook for data cleaning, EDA, and feature engineering.
+* **`customer_behavior_sql_queries.sql`**: MySQL scripts used for business transaction analysis and segmentation.
+* **`customer_behavior_dashboard.pbix`**: Interactive Power BI dashboard showing sales and demographic trends.
+* **`Customer-Shopping-Behavior-Analysis.pptx`**: Stakeholder presentation with visual findings and strategic advice.
+* **`Customer Shopping Behavior Analysis.pdf`**: Detailed project report summarizing insights and methodology.
+* **`Business Problem Document.pdf`**: Original project scope and overarching business questions.
 
+---
 
-Feature Engineering: Created an age_group column to segment customers and a purchase_frequency_days column to track engagement.
+## 💡 Key Business Recommendations
+* **🚀 Loyalty Conversion**: Implement targeted rewards for the **701 "Returning" customers** to transition them into the "Loyal" tier.
+* **💳 Subscription Growth**: Market exclusive benefits to the **73% of non-subscribers** who currently demonstrate high purchasing power.
+* **📦 Shipping Strategy**: Focus marketing on **Express Shipping** options, as these users correlate with higher overall order values.
+* **🧢 Product Positioning**: Highlight top-rated and best-selling products like **Jewelry** and **Blouses** in seasonal campaigns.
 
-
-Standardization: Converted all column headers to snake_case for database compatibility.
-
-2. Business Analysis (MySQL)
-I executed structured queries to answer 10 critical business questions, focusing on revenue and segmentation.
-
-
-Revenue by Gender: Identified that Male customers contribute $157,890 in revenue compared to $75,191 from Female customers.
-
-
-
-Customer Segmentation: Classified the database into three tiers: Loyal (3,116), Returning (701), and New (83).
-
-
-
-Shipping Correlation: Confirmed that Express Shipping users have a higher average spend ($60.48) than Standard Shipping users ($58.46).
-
-
-3. Interactive Visualization (Power BI)
-I built a high-fidelity dashboard to track KPIs at a glance:
-
-
-Core KPIs: Total Customers (3.9K), Avg. Purchase Amount ($59.76), and Avg. Review Rating (3.75).
-
-
-
-
-Category Insights: Visualized that Clothing and Accessories are the primary revenue drivers.
-
-
-
-Subscription Breakdown: Visualized that 27% of the customer base is subscribed, while 73% are not.
-
-
-📈 Key Business Insights
-
-Top Performance: The Young Adult age group is the highest revenue contributor ($62,143), followed closely by Middle-aged shoppers ($59,197).
-
-
-Product Popularity: Jewelry and Blouses are the top-selling items within the Accessories and Clothing categories, respectively.
-
-
-Discount Impact: Products like Hats and Sneakers have the highest discount dependency, with nearly 50% of their sales involving a promo code.
-
-💡 Strategic Recommendations
-
-Segment Transition: Develop a targeted campaign to move the 701 "Returning" customers into the "Loyal" tier through personalized rewards.
-
-
-
-Subscription Upsell: Since non-subscribers have a slightly higher average spend ($59.87) than subscribers ($59.49), there is a significant opportunity to convert high-value shoppers into the subscription model for long-term retention.
-
-
-
-Logistics Marketing: Promote Express Shipping options more aggressively, as these users correlate with higher overall order values.
-
-
-📂 Project Structure
-scripts/data_cleaning.py: Python ETL script for cleaning and normalization.
-
-sql/analysis_queries.sql: 10 business queries for revenue, ranking, and segmentation.
-
-visuals/dashboard.pbix: The interactive Power BI report file.
-
-docs/report.pdf: Detailed project summary and recommendations.
+---
+**Author**: Mopuru Dinesh 
+**LinkedIn**: linkedin.com/in/mopuru-dinesh
